@@ -1,109 +1,246 @@
-ssvnc (1.0.29-3.1) unstable; urgency=medium
+x11vnc (0.9.13-2.1) unstable; urgency=medium
 
-  * fix desktop for antiX
-  * remove xterm dependency
+  * set desktop file for antiX 
 
- -- anticapitalista <antix@operamail.com>  Mon, 29 Jan 2018 19:50:43 +0200
+ -- anticapitalista <antix@operamail.com>  Mon, 29 Jan 2018 19:47:09 +0200
 
-ssvnc (1.0.29-3) unstable; urgency=low
+x11vnc (0.9.13-2) unstable; urgency=medium
 
-  * debian/rules: Add call to dh_strip_nondeterminism.
-  * openssl1.1.patch (new): Support OpenSSL 1.1 API changes (Closes:
-    #828559).
-  * auto-scale.patch (new): Make autoscaling work (Closes: #801804, LP:
-    #1312966). In addition to the command-line option "-scale auto"
-    creating a 1×1 window, rescaling when resizing the window didn't
-    happen, at least not when Caps Lock or other modifiers were active.
-  * samemachine_ipv6_overflow.patch (new): Fix stack overflow when
-    connecting over IPv6, caused by non-IPv6-aware code (Closes: #774622).
-  * nostrip.patch: Don't strip vncstorepw or ultravnc_dsm_helper either.
-  * buildflags.patch: Also pass flags to vncstorepw/Makefile and patch
-    that to use them.
-  * Bump Standards-Version to 3.9.8.
+  * Add patches:
+    - 0001-Fix-openssl-1.1.x-detection.patch - update configure.ac to detect
+      the OpenSSL  instead of SSL_library_init function
+    - 0002-Support-openssl-1.1.0.patch - add support for OpenSSL 1.1.0
+      (Closes: #845106)
+    - do-not-run-dbus-launch.patch (Closes: #836401)
+    - enforce-bash.patch - enforce bash due to shopt usage (Closes: #690637)
+  * Update 10_usepkgconfig.diff: use $PKG_CONFIG instead of pkg-config.
+    Thanks to Helmut Grohne. (Closes: #845723)
+  * Update debian/control:
+    - add dh-autoreconf build dependency
+    - we really want openjdk, so use openjdk-8-jdk | openjdk-7-jdk
+  * Update debian/rules: pass --without-tightvnc-filetransfer to configure.
 
- -- Magnus Holmgren <holmgren@debian.org>  Sat, 30 Jul 2016 23:09:44 +0200
+ -- Fathi Boudra <fabo@debian.org>  Wed, 21 Dec 2016 16:59:50 +0200
 
-ssvnc (1.0.29-2) unstable; urgency=low
+x11vnc (0.9.13-1.3) unstable; urgency=medium
 
-  * Also get CPPFLAGS from dpkg-buildflags. Pass it as EXTRA_DEFINES to
-    vnc_unixsrc/*/Makefile.
+  * Non-maintainer upload.
+  * Build with libssl1.0-dev for now. (Closes: #845106)
 
- -- Magnus Holmgren <holmgren@debian.org>  Fri, 11 Nov 2011 08:11:09 +0100
+ -- Christian Hofstaedtler <zeha@debian.org>  Mon, 19 Dec 2016 02:37:39 +0000
 
-ssvnc (1.0.29-1) unstable; urgency=low
+x11vnc (0.9.13-1.2) unstable; urgency=medium
 
-  * New upstream release.
-  * Install ReleaseNotes as upstream changelog file.
-  * Simply build-depend on libjpeg-dev instead of libjpeg62-dev |
-    libjpeg-dev (Closes: #644808).
-  * Install a symlink in /usr/bin instead of including the main vncviewer
-    binary twice in the package.
-  * Add build-arch and build-indep targets to debian/rules.
-  * nostrip.patch: Remove strip command from the Makefile, allowing
-    DEB_BUILD_OPTONS=nostrip to work.
-  * Get CFLAGS and LDFLAGS from dpkg-buildflags.
-  * buildflags.patch: Pass CFLAGS and LDFLAGS through via ./Makefile as
-    CDEBUGFLAGS and LOCAL_LDFLAGS to vnc_unixsrc/*/Makefile. This results
-    in -fno-strict-aliasing (added by xmkmf by default) being dropped, but
-    that doesn't seem to cause any problems.
-  * format-security.patch: Fix some flaws uncovered by -Wformat-security.
-  * Bump Standards-Version to 3.9.2.
+  * Non-maintainer upload.
+  * 10_usepkgconfig.diff: Use pkg-config instead of libvncserver-config to
+    locate libvncserver/client. This prevents unnecessary linkage and fixes a
+    FTBFS caused by trying to link against libgcrypt (which is not a
+    build-dependency). Closes: #760086
 
- -- Magnus Holmgren <holmgren@debian.org>  Thu, 10 Nov 2011 22:23:15 +0100
+ -- Andreas Metzler <ametzler@debian.org>  Sun, 31 Aug 2014 18:16:32 +0200
 
-ssvnc (1.0.28-1) unstable; urgency=low
+x11vnc (0.9.13-1.1) unstable; urgency=low
 
-  * New upstream release (Closes: #592873, "Connection from UVNC
-    Single-Click does not start vncviewer when -acceptpopups is set").
-  * Convert to source format 3.0 (quilt), changing /bin/sh into /bin/bash
-    (see below) in the install target instead.
-  * debian/copyright: Update years of copyright; remove notice that the
-    UltraVNC DSM helper module is not included (which it is since
-    1.0.24-1).
-  * Remove redundant bash dependency; bash isn't going to be non-essential
-    any time soon.
-  * Up Standards-Version to 3.9.1.
+  * Non-maintainer upload.
+  * Fix "Transition package to use default java implementation":
+    apply patch from Ubuntu / James Page:
 
- -- Magnus Holmgren <holmgren@debian.org>  Sun, 06 Feb 2011 23:06:25 +0100
+    Transition package to build with default java implementation:
+     - d/control: BD on default-jdk (>= 1:1.6) instead of openjdk-6-jdk.
 
-ssvnc (1.0.27-1) unstable; urgency=low
+    (Closes: #684378)
+
+ -- gregor herrmann <gregoa@debian.org>  Wed, 22 May 2013 19:14:10 +0200
+
+x11vnc (0.9.13-1) unstable; urgency=low
 
   * New upstream release.
-  * bashisms.dpatch: Don't try to fix all bashisms; instead change /bin/sh
-    to /bin/bash and depend on bash, which is small in this context.
 
- -- Magnus Holmgren <holmgren@debian.org>  Sun, 23 May 2010 19:07:52 +0200
+ -- Fathi Boudra <fabo@debian.org>  Sat, 31 Dec 2011 12:57:29 +0200
 
-ssvnc (1.0.25-1) unstable; urgency=low
+x11vnc (0.9.12-1) unstable; urgency=low
 
-  * New upstream release.
-  * confusing_-h.dpatch and bashisms.dpatch: adjusted.
+  * New upstream release. (Closes: #609899)
+    - jar files fail to work on earlier jvm's. (Closes: #593305)
+    - FTBFS: error: 'pointer' redeclared as different kind of symbol.
+      (Closes: #610802)
 
- -- Magnus Holmgren <holmgren@debian.org>  Sat, 06 Feb 2010 20:45:04 +0100
+ -- Fathi Boudra <fabo@debian.org>  Mon, 21 Feb 2011 12:04:32 +0200
 
-ssvnc (1.0.24-1) unstable; urgency=low
+x11vnc (0.9.10-1.1) unstable; urgency=low
 
-  * New upstream release.
-    * ssvnc -help now prints a help message instead of passing -help to the
-      tcl interpreter.
-  * confusing_-h.dpatch (new): Improve upstream's handling of -help a bit
-    (Closes: 544250).
-  * ultraftp_path.dpach (new): Use hardcoded (and correct for this
-    package) path to ultraftp.jar if SSVNC_ULTRA_FTP_JAR is unset, so that
-    file transfers work even if ssvncviewer is executed directly.
-  * bashisms.dpatch (new): Fix most bashisms (all that matter).
-  * Drop no_openssl.dpatch and build ultravnc_dsm_helper; OpenSSL
-    exception has been granted. Build-depend on libssl-dev.
-  * Promote stunnel4 from Recommends to Depends (Closes: #553411), depend
-    directly on openssl, depend on tk instead of tk8.4, and tweak java
-    recommendations.
-  * Add README.source.
-  * Bump Standards-Version to 3.8.3.
+  * Non-maintainer upload.
+  * debian/control: B-D-I on openjdk-6-jdk rather than B-D on default-jdk.
+  * debian/rules: Only rebuild jars in binary and binary-indep targets.
+    (Closes: #598619)
 
- -- Magnus Holmgren <holmgren@debian.org>  Sat, 31 Oct 2009 21:02:42 +0100
+ -- Tim Retout <diocles@debian.org>  Mon, 18 Oct 2010 23:53:56 +0100
 
-ssvnc (1.0.23-1) unstable; urgency=low
+x11vnc (0.9.10-1) unstable; urgency=low
 
-  * Initial release (Closes: #504134).
+  * New upstream release:
+    - enabled fix for tight security type for RFB 3.8 (Closes: #517422)
+  * Add x11vnc-data package: split jar files.
+  * Switch to dpkg-source 3.0 (quilt) format.
+  * Update debian/control:
+    - bump debhelper build dependencies.
+    - bump Standards-Version to 3.8.4 (no changes needed).
+  * Update debian/rules:
+    - enable parallel build (pass --parallel option to dh).
+    - list missing files (pass --list-missing option to dh).
+    - rebuild signed jar files on all architectures except:
+      hppa, hurd-i386, kfreebsd-amd64 and kfreebsd-i386.
+      The Sun's java/jarsigner isn't available on these architectures.
+      (Closes: #559088)
 
- -- Magnus Holmgren <holmgren@debian.org>  Sat, 01 Aug 2009 19:31:25 +0200
+ -- Fathi Boudra <fabo@debian.org>  Mon, 14 Jun 2010 11:49:13 +0300
+
+x11vnc (0.9.9-1) unstable; urgency=low
+
+  * New upstream release:
+    - Improve -rfbauth option documentation in the manual page.
+      (Closes: #496294)
+    - Improve -quiet option documentation. (Closes: #560805)
+    - Print error reasons for -storepasswd failures. (Closes: #560809)
+  * Drop XTrap support. XTrap has been removed from the xserver.
+    Remove libxtrap-dev build dependency. (Closes: #559699)
+  * Add chrpath build dependency to remove x11vnc rpath.
+  * Bump Standards-Version to 3.8.3 (no changes needed).
+
+ -- Fathi Boudra <fabo@debian.org>  Wed, 23 Dec 2009 11:58:48 +0100
+
+x11vnc (0.9.8-2) unstable; urgency=low
+
+  * Updated debian/copyright:
+    - Added OpenSSl license exception to link against libssl.
+  * Updated debian/control:
+    - Set myself as Maintainer.
+    - Added libssl-dev build dependency.
+    - Added openssl dependency. (Closes: #501020)
+  * Updated debian/rules:
+    - Removed --without-ssl configure option.
+
+ -- Fathi Boudra <fabo@debian.org>  Mon, 10 Aug 2009 07:55:12 +0200
+
+x11vnc (0.9.8-1) unstable; urgency=low
+
+  * QA upload.
+  * New upstream release (Closes: #529010):
+    - x11vnc is removed upstream from libvncserver sources.
+      Now, it is released separately.
+    - fixed x11vnc -forever segfault. (Closes: #461382)
+    - x11vnc.desktop file is included. (Closes: #475113)
+  * Bumped debian/compat from 5 to 7.
+  * Updated debian/control:
+    - Cleanuped build dependencies.
+    - Removed libssl-dev build dependency.
+    - Added Homepage field.
+    - Added tk dependency. (Closes: #505213)
+    - Added default-jdk build dependency. java applet are built from sources.
+      (Closes: #507011, #500970)
+  * Updated debian/copyright.
+  * Switched debian/rules from cdbs to dh usage.
+
+ -- Fathi Boudra <fabo@debian.org>  Fri, 07 Aug 2009 15:45:36 +0200
+
+libvncserver (0.9.3.dfsg.1-2) unstable; urgency=low
+
+  * QA upload.
+  * Drop useless build-depends on linux-libc-dev.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Wed, 13 May 2009 20:11:07 +0200
+
+libvncserver (0.9.3.dfsg.1-1) unstable; urgency=low
+
+  * QA upload.
+  * New upstream release. (Closes: #448942)
+    - CVS tag X11VNC_REL_0_9_3
+  * Switched rules to CDBS.
+  * Bumped compat to 5.
+  * Bumped Standards-Version to 3.7.2
+  * Enabled shared libraries. (Closes: #373298)
+  * Dropped vncommand, since it isn't installed by make install.
+    - All hate-mail should be sent to debian@pusling.com
+  * Added debug package.
+  * Removed the classes/ dir, there are no sources for the jar files.
+    - Appended .dfsg.1 to source version.
+    - Added patch 01_ignore_classes to allow building without classes/ dir.
+  * Added patch 02_linux_test to look for /usr/include/linux instead of /dev/vcsa
+
+ -- Matthew Rosewarne <mrosewarne@inoutbox.com>  Mon, 05 Nov 2007 03:22:20 -0500
+
+libvncserver (0.8.2-2) unstable; urgency=low
+
+  * Orphaning package 
+
+ -- Ludovic Drolez <ldrolez@debian.org>  Wed, 25 Apr 2007 12:00:32 +0200
+
+libvncserver (0.8.2-1) unstable; urgency=high
+
+  * New upstream release. Closes: #373808
+  * This new release fixes a security bug which might be present in the
+    previous release of the package. Closes: #376824
+  * urgency=high because a probable security bug was fixed.
+
+ -- Ludovic Drolez <ldrolez@debian.org>  Mon, 17 Jul 2006 20:43:38 +0200
+
+libvncserver (0.7.1-5) unstable; urgency=high
+
+  * Re-upload with urgency=high because the package in testing is unusable
+
+ -- Ludovic Drolez <ldrolez@debian.org>  Thu, 12 Jan 2006 15:30:00 +0100
+
+libvncserver (0.7.1-4) unstable; urgency=low
+
+  * Put x11vnc 0.7.3 sources in their own directory. Closes: #333880
+  * Updated build-depends. Closes: #347019
+
+ -- Ludovic Drolez <ldrolez@debian.org>  Mon,  9 Jan 2006 23:13:15 +0100
+
+libvncserver (0.7.1-3) unstable; urgency=low
+
+  * Added x11vnc 0.7.3 sources. Closes: #328943
+  * Added the x11vnc FAQ which is in the README. Closes: #325479
+  * Added build dependencies on libxdamage-dev, libfixes-dev, libxrandr-dev
+
+ -- Ludovic Drolez <ldrolez@debian.org>  Wed, 28 Sep 2005 19:00:05 +0200
+
+libvncserver (0.7.1-2) unstable; urgency=low
+
+  * Removed the /dev/vcsa1 test to fix the pbuilder bug. Closes: #322643
+  * new vncommand package: allows you to attach a VNC server to any command
+
+ -- Ludovic Drolez <ldrolez@debian.org>  Fri, 26 Aug 2005 18:02:16 +0200
+
+libvncserver (0.7.1-1) unstable; urgency=low
+
+  * New upstream release. Closes: #309385
+
+ -- Ludovic Drolez <ldrolez@debian.org>  Fri, 25 Mar 2005 20:48:38 +0100
+
+libvncserver (0.7-1) unstable; urgency=low
+
+  * New upstream release
+  * New upstream x11vnc man page. Closes: Bug#277510
+
+ -- Ludovic Drolez <ldrolez@debian.org>  Mon, 31 Jan 2005 23:06:17 +0100
+
+libvncserver (0.6-3) unstable; urgency=low
+
+  * Added the latest x11vnc.c (0.6.1) which has the -scale option.
+  * Added the scale option in the manual.
+
+ -- Ludovic Drolez <ldrolez@debian.org>  Fri, 16 Jul 2004 16:26:09 +0200
+
+libvncserver (0.6-2) unstable; urgency=low
+
+  * Added the latest x11vnc.c from the CVS. Closes: Bug#246205
+
+ -- Ludovic Drolez <ldrolez@debian.org>  Thu, 29 Apr 2004 22:09:53 +0200
+
+libvncserver (0.6-1) unstable; urgency=low
+
+  * Initial Release.
+  * Integrated the last release of x11vnc.
+
+ -- Ludovic Drolez <ldrolez@debian.org>  Wed, 10 Mar 2004 23:42:26 +0100

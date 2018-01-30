@@ -1,24 +1,209 @@
-This package was debianized by Magnus Holmgren <holmgren@debian.org> on
-Fri, 31 Oct 2008 22:08:16 +0100.
+This package was debianized by:
 
-It was downloaded from <http://www.karlrunge.com/x11vnc/ssvnc.html>
+    Fathi Boudra <fabo@debian.org> on Fri, 07 Aug 2009 15:45:36 +0200
+
+It was downloaded from:
+
+     http://www.karlrunge.com/x11vnc/
 
 Upstream Author:
 
     Karl J. Runge <runge@karlrunge.com>
 
-Copyright:
+Copyright for X11vnc:
 
-    Copyright © 2006-2010 Karl J. Runge
-    TightVNC Copyright © 2001-2003 Constantin Kaplinsky
-    VNC Copyright © AT&T Laboratories Cambridge, 
-        © 1994-2000 Olivetti Research Ltd/AT&T Laboratories Cambridge.
+    Copyright (C) 2002-2010 Karl J. Runge. All Rights Reserved.
+
+Copyright for x11vnc/misc/turbovnc/tight.c file:
+
+    Copyright (C) 2005-2008 Sun Microsystems, Inc. All Rights Reserved.
+    Copyright (C) 2004 Landmark Graphics Corporation. All Rights Reserved.
+    Copyright (C) 2000, 2001 Constantin Kaplinsky. All Rights Reserved.
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+
+Copyright for x11vnc/misc/turbovnc/turbojpeg.h file:
+
+    Copyright (C) 2005, 2006 Sun Microsystems, Inc. All Rights Reserved.
+    Copyright (C) 2004 Landmark Graphics Corporation. All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/AuthPanel.java file:
+
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/AuthUnixLoginPanel.java file:
+
+    Copyright (C) 2004 Constantin Kaplinsky. All Rights Reserved.
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/ButtonPanel.java file:
+
+    Copyright (C) 2001, 2002 HorizonLive.com Inc. All Rights Reserved.
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/CapabilityInfo.java file:
+
+    Copyright (C) 2003 Constantin Kaplinsky. All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/CapsContainer.java file:
+
+    Copyright (C) 2003 Constantin Kaplinsky. All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/ClipboardFrame.java file:
+
+    Copyright (C) 2001 HorizonLive.com Inc. All Rights Reserved.
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/DesCipher.java file:
+
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+    Copyright (C) 1996 Widget Workshop Inc. All Rights Reserved.
+    Copyright (C) 1996 Jef Poskanzer <jef@acme.com>
+    Copyright (C) 1996 All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/HTTPConnectSocket.java file:
+
+    Copyright (C) 2002 Constantin Kaplinsky Inc. All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/HTTPConnectSocketFactory.java file:
+
+    Copyright (C) 2002 Constantin Kaplinsky Inc. All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/OptionsFrame.java file:
+
+    Copyright (C) 2001 HorizonLive.com Inc. All Rights Reserved.
+    Copyright (C) 2001 Constantin Kaplinsky. All Rights Reserved.
+    Copyright (C) 2000 Tridia Corporation. All Rights Reserved.
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/RecordingFrame.java file:
+
+    Copyright (C) 2002 Constantin Kaplinsky. All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/ReloginPanel.java file:
+
+    Copyright (C) 2002 Cendio Systems. All Rights Reserved.
+    Copyright (C) 2002 Constantin Kaplinsky. All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/RfbProto.java file:
+
+    Copyright (C) 2001-2004 HorizonLive.com Inc. All Rights Reserved.
+    Copyright (C) 2001, 2002 Constantin Kaplinsky. All Rights Reserved.
+    Copyright (C) 2000 Tridia Corporation. All Rights Reserved.
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/SSLSocketToMe.java file:
+
+    Copyright (C) 2006 Karl J. Runge <runge@karlrunge.com>
+
+Copyright for classes/ssl/src/tight/SessionRecorder.java file:
+
+    Copyright (C) 2002 Constantin Kaplinsky. All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/SocketFactory.java file:
+
+    Copyright (C) 2002 HorizonLive.com Inc. All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/VncCanvas.java file:
+
+    Copyright (C) 2004 Horizon Wimba. All Rights Reserved.
+    Copyright (C) 2001-2003 HorizonLive.com Inc. All Rights Reserved.
+    Copyright (C) 2001, 2002 Constantin Kaplinsky. All Rights Reserved.
+    Copyright (C) 2000 Tridia Corporation. All Rights Reserved.
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+
+Copyright for classes/ssl/src/tight/VncViewer.java file:
+
+    Copyright (C) 2001-2004 HorizonLive.com Inc. All Rights Reserved.
+    Copyright (C) 2002 Constantin Kaplinsky. All Rights Reserved.
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+
+Copyright for classes/ssl/src/ultra/AuthPanel.java file:
+
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+
+Copyright for classes/ssl/src/ultra/ButtonPanel.java file:
+
+    Copyright (C) 2002-2003 Ultr@VNC Team. All Rights Reserved.
+    Copyright (C) 2004 Kenn Min Chong
+    Copyright (C) 2004 John Witchel. All Rights Reserved.
+    Copyright (C) 2001, 2002 HorizonLive.com Inc. All Rights Reserved.
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+
+Copyright for classes/ssl/src/ultra/ClipboardFrame.java file:
+
+    Copyright (C) 2001 HorizonLive.com Inc. All Rights Reserved.
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+
+Copyright for classes/ssl/src/ultra/DH.java file:
+
+    Copyright (C) 2004 Lee Griffiths <lee.griffiths@first4internet.co.uk>
+
+Copyright for classes/ssl/src/ultra/DesCipher.java file:
+
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+    Copyright (C) 1996 Widget Workshop Inc. All Rights Reserved.
+    Copyright (C) 1996 Jef Poskanzer <jef@acme.com>
+    Copyright (C) 1996 All Rights Reserved.
+
+Copyright for classes/ssl/src/ultra/FTPFrame.java file:
+
+    Copyright (C) 2002-2005 Ultr@VNC Team. All Rights Reserved.
+    Copyright (C) 2004 Kenn Min Chong
+    Copyright (C) 2004 John Witchel. All Rights Reserved.
+
+Copyright for classes/ssl/src/ultra/OptionsFrame.java file:
+
+    Copyright (C) 2001 HorizonLive.com Inc. All Rights Reserved.
+    Copyright (C) 2001 Constantin Kaplinsky. All Rights Reserved.
+    Copyright (C) 2000 Tridia Corporation. All Rights Reserved.
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+
+Copyright for classes/ssl/src/ultra/RecordingFrame.java file:
+
+    Copyright (C) 2002 Constantin Kaplinsky. All Rights Reserved.
+
+Copyright for classes/ssl/src/ultra/RfbProto.java file:
+
+    Copyright (C) 2002-2004 Ultr@VNC Team. All Rights Reserved.
+    Copyright (C) 2004 Kenn Min Chong
+    Copyright (C) 2004 John Witchel. All Rights Reserved.
+    Copyright (C) 2001, 2002 HorizonLive.com Inc. All Rights Reserved.
+    Copyright (C) 2001, 2002 Constantin Kaplinsky. All Rights Reserved.
+    Copyright (C) 2000 Tridia Corporation. All Rights Reserved.
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+
+Copyright for classes/ssl/src/ultra/SSLSocketToMe.java file:
+
+    Copyright (C) 2006 Karl J. Runge <runge@karlrunge.com>
+
+Copyright for classes/ssl/src/ultra/SessionRecorder.java file:
+
+    Copyright (C) 2002 Constantin Kaplinsky. All Rights Reserved.
+
+Copyright for classes/ssl/src/ultra/VncCanvas.java file:
+
+    Copyright (C) 2001, 2002 HorizonLive.com Inc. All Rights Reserved.
+    Copyright (C) 2001, 2002 Constantin Kaplinsky. All Rights Reserved.
+    Copyright (C) 2000 Tridia Corporation. All Rights Reserved.
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
+    Copyright (C) Now Default <sf@2005>
+
+Copyright for classes/ssl/src/ultra/VncViewer.java file:
+
+    Copyright (C) 2002-2005 Ultr@VNC Team. All Rights Reserved.
+    Copyright (C) 2004 Kenn Min Chong
+    Copyright (C) 2004 John Witchel. All Rights Reserved.
+    Copyright (C) 2004 Alban Chazot. All Rights Reserved.
+    Copyright (C) 2001, 2002 HorizonLive.com Inc. All Rights Reserved.
+    Copyright (C) 2002 Constantin Kaplinsky. All Rights Reserved.
+    Copyright (C) 1999 AT&T Laboratories Cambridge. All Rights Reserved.
 
 License:
 
-    This package is free software; you can redistribute it and/or
-    modify it under the terms of version 2 of the GNU General Public
-    License as published by the Free Software Foundation.
+    This package is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
 
     This package is distributed in the hope that it will be useful,
     but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -27,13 +212,10 @@ License:
 
     You should have received a copy of the GNU General Public License
     along with this package; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
-    02110-1301 USA
+    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
 
-Special GPL exception for ultravnc_dsm_helper:
-
-    In addition, as a special exception, Karl J. Runge gives permission
-    to link the code of its release of ultravnc_dsm_helper with the
+    In addition, as a special exception, Karl J. Runge
+    gives permission to link the code of its release of x11vnc with the
     OpenSSL project's "OpenSSL" library (or with modified versions of it
     that use the same license as the "OpenSSL" library), and distribute
     the linked executables.  You must obey the GNU General Public License
@@ -42,68 +224,20 @@ Special GPL exception for ultravnc_dsm_helper:
     file, but you are not obligated to do so.  If you do not wish to do
     so, delete this exception statement from your version.
 
-
-ZYWRLE VNC codec © 2006 Hitachi Systems & Services, Ltd. (Noriaki
-Yamazaki, Research & Development Center)
-
-License:
-
-    Redistribution and use in source and binary forms, with or without
-    modification, are permitted provided that the following conditions
-    are met:
-
-    - Redistributions of source code must retain the above copyright
-    notice, this list of conditions and the following disclaimer.
-
-    - Redistributions in binary form must reproduce the above
-    copyright notice, this list of conditions and the following
-    disclaimer in the documentation and/or other materials provided
-    with the distribution.
-
-    - Neither the name of the Hitachi Systems & Services, Ltd. nor the
-    names of its contributors may be used to endorse or promote
-    products derived from this software without specific prior written
-    permission.
-
-    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
-    CONTRIBUTORS ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
-    INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-    MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-    DISCLAIMED.  IN NO EVENT SHALL THE FOUNDATION OR CONTRIBUTORS BE
-    LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,
-    OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
-    PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
-    PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-    THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
-    TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF
-    THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
-    SUCH DAMAGE.
-
-
-SSVNC includes the Ultr@VNC 1.0.0 RC19 Java Viewer.
-
-Copyright:
-
-    © 2002-2005 Ultr@VNC Team.  All Rights Reserved.
-    © 2004 Kenn Min Chong, John Witchel.  All Rights Reserved.
-    © 2004 Alban Chazot.  All Rights Reserved.
-    © 2001,2002 HorizonLive.com, Inc.  All Rights Reserved.
-    © 2001,2002 Constantin Kaplinsky.  All Rights Reserved.
-    © 1999 AT&T Laboratories Cambridge.  All Rights Reserved.
-
-License:
-
-    This software is distributed under the GNU General Public Licence as
-    published by the Free Software Foundation. See the file LICENCE.TXT for the
-    conditions under which this software is made available. VNC also contains
-    code from other sources. See the Acknowledgements section below, and the
-    individual files for details of the conditions under which they are made
-    available.
-
-
 On Debian systems, the complete text of the GNU General
-Public License can be found in `/usr/share/common-licenses/GPL-2' instead.
+Public License version 2 can be found in `/usr/share/common-licenses/GPL-2'.
 
+The Debian packaging is:
 
-The Debian packaging is © 2008-2011, Magnus Holmgren
-<holmgren@debian.org> and is licensed under the GPL, see above.
+    Copyright (C) 2009-2010 Fathi Boudra <fabo@debian.org>
+
+and is licensed under the GPL version 2,
+see `/usr/share/common-licenses/GPL-2'.
+
+Note: This file contains X11vnc and java classes copyrights statements only.
+      X11vnc sources are moved away from libvncserver sources since v0.9.7.
+      The current X11vnc tarball still contains an embedded copy of
+      libvncserver sources but they are not used or built by X11vnc Debian
+      package.
+
+LibVNCServer copyrights can be found in `/usr/share/doc/libvncserver0/copyright'.

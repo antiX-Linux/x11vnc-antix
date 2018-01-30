@@ -1,9 +1,6 @@
-confusing_-h.patch
-ultraftp_path.patch
-nostrip.patch
-buildflags.patch
-format-security.patch
-openssl1.1.patch
-auto-scale.patch
-samemachine_ip6_overflow.patch
-no_xterm
+0001-Fix-openssl-1.1.x-detection.patch
+0002-Support-openssl-1.1.0.patch
+10_usepkgconfig.diff
+do-not-run-dbus-launch.patch
+enforce-bash.patch
+antiX_show_desktop

@@ -1,33 +1,46 @@
-Source: ssvnc
-Section: net
-Priority: extra
-Maintainer: Magnus Holmgren <holmgren@debian.org>
-Build-Depends: dpkg-dev (>= 1.15.7), debhelper (>= 7), xutils-dev, libxaw7-dev,
- libxmu-dev, libxext-dev, libxt-dev, libsm-dev, libice-dev,
- libjpeg-dev, zlib1g-dev | libz-dev,
- default-jdk, libssl-dev, dh-strip-nondeterminism
+Source: x11vnc
+Section: x11
+Priority: optional
+Maintainer: Fathi Boudra <fabo@debian.org>
+Build-Depends: automake,
+               chrpath,
+               debhelper (>= 9),
+               dh-autoreconf,
+               libavahi-client-dev,
+               libssl-dev,
+               libtool,
+               libvncserver-dev (>= 0.9.9),
+               libxdamage-dev,
+               libxext-dev,
+               libxfixes-dev,
+               libxinerama-dev,
+               libxrandr-dev,
+               libxss-dev,
+               libxtst-dev
+Build-Depends-Indep: openjdk-8-jdk | openjdk-7-jdk
 Standards-Version: 3.9.8
-Homepage: http://www.karlrunge.com/x11vnc/ssvnc.html
+Homepage: http://www.karlrunge.com/x11vnc/
 
-Package: ssvnc
+Package: x11vnc
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, tk,
- openssh-client, bind9-host | host, procps, psmisc, x-terminal-emulator,
- stunnel4, openssl
-Recommends: default-jre | java5-runtime
-Description: Enhanced TightVNC viewer with SSL/SSH tunnel helper
- VNC stands for Virtual Network Computing. It is, in essence, a remote
- display system which allows you to view a computing `desktop'
- environment not only on the machine where it is running, but from
- anywhere on the Internet and from a wide variety of machine
- architectures.
- .
- SSVNC is two things:
- .
- * An enhanced version of the TightVNC client with support for more
- encodings and color modes, support for x11vnc and UltraVNC
- extensions, dynamic screen resizing, an improved popup menu, etc.
- .
- * A GUI that helps set up an SSL (using stunnel) or SSH tunnel to
- connect to the VNC server through, as well as forwarding of ports for
- audio (esound/aRts), SMB, CUPS etc.
+Depends: openssl,
+         tk,
+         x11vnc-data (= ${source:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: VNC server to allow remote access to an existing X session
+ x11vnc allows one to view remotely and interact with real X displays (i.e. a
+ display corresponding to a physical monitor, keyboard, and mouse) with any
+ VNC viewer. It has built-in SSL encryption and authentication, UNIX account
+ and password support, server-side scaling, single port HTTPS and VNC, mDNS
+ service advertising, and TightVNC and UltraVNC file-transfer.
+
+Package: x11vnc-data
+Architecture: all
+Depends: ${misc:Depends}
+Recommends: x11vnc (>= ${source:Version})
+Replaces: x11vnc (<< 0.9.10)
+Description: data files for x11vnc
+ This package contains the data files for x11vnc, a VNC server allowing remote
+ access to an existing X session. Unless you have 'x11vnc' package installed,
+ you probably won't find this package useful.
